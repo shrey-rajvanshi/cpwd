@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block maincontent %}
+		<!-- List of uploaded documents -->
+        <div class = "imagepage">
+		{% if documents %}
+			<ul>
+			{% for document in documents %}
+				<li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a>
+                    <img src="{{ document.docfile.url }}" style="max-height:30% ">
+			<p>Drawing Created: {{ document.created}}</p>
+			<p>Drawing Modified: {{ document.modified}}</p>
+			</li>
+                <p>                ---------------------------------------------------------------------------------------------</p>
+			{% endfor %}
+			</ul>
+		{% else %}
+			<p>No documents.</p>
+		{% endif %}
+
+		<!-- Upload form.  -->
+		<form action="" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			<p>{{ form.non_field_errors }}</p>
+			<p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+			<p>
+				{{ form.docfile.errors }}
+				{{ form.docfile }}
+			</p>
+			<p><input type="submit" value="Upload" /></p>
+		</form>
+
+        </div>
+{% endblock %}
+

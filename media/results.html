@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block maincontent %}
+<!--<script type="text/javascript">
+    document.onload( {Array = document.getElementsByClassName("agency");
+       for(i=0;i<=Array.length;i++)
+       {
+           document.getElementsByClassName("agency")[i].innerHTML=document.getElementsByClassName("agency").innerHTML+1;
+       }});
+</script> !-->
+<div class="results">
+
+<h3>agency is {{ agency }} and name is {{ name }}<br/></h3>
+    {% for l in list %}
+
+        <div class= "work{{ l.status }}">
+            <a href ="../view/{{ l.id }}/"> {{ forloop.counter }}. {{ l.name }}</a>
+            &nbsp;&nbsp;&nbsp; <div class =agency style ="float:right;"> {{ l.status }}</div><br/></div>
+    {% endfor %}
+</div>
+{% endblock %}

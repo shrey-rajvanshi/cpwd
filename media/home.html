@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block maincontent %}
+    <div class = "navigation">
+	<ul class="top-level">
+     {% for tab in tabs %}
+     <li> <a href = "{{ tab.link }}"><img src="{{ MEDIA_URL }}images/{{ tab.name }}.png" height=50px>{{ tab.name }}</a></li>
+{% endfor %}
+    </ul>
+    </div>
+<div class = content>
+  <p> Username : {{ request.user.username }} <br/>
+      First Name: {{ request.user.first_name }} <br/>
+      Last Name: {{ request.user.last_name }} <br/>
+      Email_id: {{ request.user.email }} <br/>
+      Last Login: {{ request.user.last_login }}</p>
+    <a href ="../admin/">Click here to edit your profile</a>
+</div>
+
+{% endblock %}

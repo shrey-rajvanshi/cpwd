@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block maincontent %}
+<div id = "loginform" >
+
+<div id = "filler"></div>
+    <form action="" method="POST" >
+        {% csrf_token %}
+        {% for field in form %}
+            <li>
+                <span>{{ field.label }}</span> {{ field }}<span class="errors">{{ field.errors }}</span>
+            </li>
+        {% endfor %}
+
+        <p><input type="submit" value="Submit"></p>
+    </form>
+    
+
+</div>
+
+{% endblock %}
+

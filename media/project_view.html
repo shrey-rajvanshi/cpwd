@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+{% block title %}Project {{ work.project_code }}{% endblock %}
+{% block maincontent %}
+
+
+<div id = "imgcontainer" style="width:569px;height:47px;">
+  <div>
+      <img id = "img1" src ="{{ MEDIA_URL }}images/step{{ work.status }}.png" onmouseover="src='{{ MEDIA_URL }}images/step{{ work.status }}h.png'" onmouseout="src='{{ MEDIA_URL }}images/step{{ work.status }}.png'" ></div>
+
+            <a href="http://127.0.0.1:8000/edit/{{ work.id }}/">
+                <div id = "cstep" onmouseover="b()" onmouseout="c()" style="width: 142px;height: 47px;position: relative;top: -47px; ">
+
+                </div>
+            </a>
+
+        </img>
+
+  </div>
+<script type="text/javascript">
+    document.onload(a());
+    function a(){
+        var m = {{work.status}};
+        var n = parseInt(m) *143;
+        document.getElementById("cstep").style.marginLeft=n +"px";
+    }
+    function b()
+        {
+        document.getElementById("img1").src= "{{ MEDIA_URL }}images/step{{ work.status }}h.png";
+        }
+    function c()
+    {
+        document.getElementById("img1").src= "{{ MEDIA_URL }}images/step{{ work.status }}.png";
+    }
+</script>
+
+<div style="width:50%; position: absolute;left: 25%;">
+<table border="1" >
+
+<tr>
+<td colspan="2" style = "background:#666; color:#fff; font-size:1.5em;"><center>Project Details</center></td>
+</tr>
+    
+
+
+<tr>
+<td id="zx">Name</td>
+<td id="zx">{{ work.name }}</td>
+</tr>
+<tr>
+<td id="zx">Code</td>
+<td id="zx">{{ work.project_code }}</td>
+</tr>
+<tr>
+<td id="zx">Requisition</td>
+<td id="zx">{{ work.requisition }}</td>
+</tr>
+
+<tr>
+<td id="zx">Client</td>
+<td id="zx">{{ work.client }}</td>
+</tr>
+
+<tr>
+<td id="zx">Time Allowed</td>
+<td id="zx">{{ work.time_allowd }}</td>
+</tr>
+
+<tr>
+<td id="zx">Expense</td>
+<td id="zx">{{ work.expense }}</td>
+</tr>
+
+<tr>
+<td id="zx">Progress</td>
+<td id="zx">{{ work.progress }}</td>
+</tr>
+
+<tr>
+<td id="zx">Status</td>
+<td id="zx">{{ work.status }}</td>
+</tr>
+<tr>
+<td colspan="2" style = "background:#999; color:#fff; font-size:1.25em; padding-left:10px;">Priliminary Estimate</td>
+</tr>
+
+<tr>
+<td id="zx">Priliminary Estimate Details</td>
+<td id="zx">{{ work.pe_det }}</td>
+</tr>
+<tr>
+<td id="zx">Priliminary Estimate Date</td>
+<td id="zx">{{ work.pe_date }}</td>
+</tr>
+<tr>
+<td id="zx">Priliminary Estimate Amount</td>
+<td id="zx">{{ work.pe_amt }}</td>
+</tr>
+<tr>
+<td id="zx">Priliminary Estimate Sent To</td>
+<td id="zx">{{ work.pe_sent_to }}</td>
+</tr>
+
+<tr>
+<td colspan="2" style = "background:#999; color:#fff; font-size:1.25em; padding-left:10px;">Technical Sanction</td>
+</tr>
+
+<tr>
+<td id="zx">TS Authority</td>
+<td id="zx">{{ work.ts_auth }}</td>
+</tr>
+<tr>
+<td id="zx">TS Detail</td>
+<td id="zx">{{ work.ts_detail }}</td>
+</tr>
+<tr>
+<td id="zx">TS Amount</td>
+<td id="zx">{{ work.ts_amt }}</td>
+</tr>
+<tr>
+<td id="zx">TS Date</td>
+<td id="zx">{{ work.ts_date }}</td>
+</tr>
+
+<tr>
+<td colspan="2" style = "background:#999; color:#fff; font-size:1.25em; padding-left:10px;">Notice Inviting Tenders</td>
+</tr>
+
+<tr>
+<td id="zx">NIT</td>
+<td id="zx">{{ work.nit }}</td>
+</tr>
+<tr>
+<td id="zx">NIT Amount</td>
+<td id="zx">{{ work.nit_amt }}</td>
+</tr>
+<tr>
+<td id="zx">NIT Date</td>
+<td id="zx">{{ work.nit_date }}</td>
+</tr>
+
+
+<tr>
+<td colspan="2" style = "background:#999; color:#fff; font-size:1.25em; padding-left:10px;">Agency</td>
+</tr>
+
+<tr>
+<td id="zx">Agency</td>
+<td id="zx">{{ work.agency }}</td>
+</tr>
+<tr>
+<td id="zx">Agency address</td>
+<td id="zx">{{ work.agency_add }}</td>
+</tr>
+<tr>
+<td id="zx">Agent No</td>
+<td id="zx">{{ work.agent_no }}</td>
+</tr>
+
+<tr>
+<td id="zx">Start date</td>
+<td id="zx">{{ work.date_start }}</td>
+</tr>
+<tr>
+<td id="zx">Stipulated date</td>
+<td id="zx">{{ work.stipulated_date }}</td>
+</tr>
+<tr>
+<td id="zx">Actual Date</td>
+<td id="zx">{{ work.actual_date }}</td>
+</tr>
+</table>
+<p><h3>Remarks:</h3></p>
+<p style="width:500px;border: 1px solid gray;height:200px;">
+{{ work.remarks }}
+</p>
+</div> <div>
+{% for d in drawings %}
+<img src="{{ document.docfile.url }}" style="width:100px;height:100px;"></img>
+
+{% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block maincontent %}
+<div class = "navigation">
+    <ul class="top-level">
+        {% for tab in tabs %}
+            <li> <a href = "{{ tab.link }}"><img src="{{ MEDIA_URL }}images/{{ tab.name }}.png" height=50px>{{ tab.name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class ="searchform">
+        <form action="" method="POST" >
+            {% csrf_token %}
+            {% for field in form %}
+                <li>
+                    <span>{{ field.label }}</span> {{ field }}<span class="errors">{{ field.errors }}</span>
+                </li>
+            {% endfor %}
+
+            <p><input type="submit" value="Submit"></p>
+        </form>
+</div>
+{% endblock %}
