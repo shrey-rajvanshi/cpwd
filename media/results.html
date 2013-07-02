@@ -14,8 +14,8 @@
     {% for l in list %}
 
         <div class= "work{{ l.status }}">
-            <a href ="../view/{{ l.id }}/"> {{ forloop.counter }}. {{ l.name }}</a>
-            &nbsp;&nbsp;&nbsp; <div class =agency style ="float:right;"> {{ l.status }}</div><br/></div>
+            <a href ="../view/{{ l.id }}/"> {{ forloop.counter }}. {{ l.name }}</a> &nbsp;&nbsp;{{ l.status }}
+            &nbsp;&nbsp;&nbsp; <div class =agency style ="float:right;"> {{ l.agency }}</div><br/></div>
     {% endfor %}
 </div>
 {% endblock %}

@@ -10,6 +10,10 @@ from work.models import *
 from work.forms import *
 from work.xls import *
 
+drawing_fields = ['name', 'project_code', 'requisition', 'pe_det', 'pe_date', 'pe_amt', 'pe_sent_to', 'client', 'aa_es_detail', 'head_acc', 'final_amt', 'auth']
+accounts_fields = ['nit_amt', 'agency', 'agency_add', 'agmt_no', 'tender_amt', 'date_start', 'stipulated_start', 'actual_date', 'status', 'expense', 'progress']
+
+
 @login_required
 def search(request):
     tabs = Tab.objects.all()
@@ -80,13 +84,50 @@ def all(request):
     alerts = Alert.objects.all()
     list = Work.objects.all()
     return render(request,"results.html",{'list':list,'tabs':tabs,'alerts':alerts})
+
+
+
 @login_required
 def edit(request,id):
     work = Work.objects.get(pk=id)
     alerts = Alert.objects.all()
     tabs = Tab.objects.all()
+    user_groups = request.user.groups.all()
+    drawing_group = accounts_group = False
+    for group in user_groups:
+        if group.name == 'drawing':
+            drawing_group = True
+            print 'Drawing'
+        if group.name == 'accounts':
+            accounts_group = True
+            print 'Accounts'
+
+    global drawing_fields
+    global accounts_fields
+
     if request.POST:
         form = Addworkform(request.POST)
+        fieldset = []
+        if drawing_group:
+            fieldset.extend(drawing_fields)
+        if accounts_group:
+            fieldset.extend(accounts_fields)
+
+        """ Remove duplicates, not using sets so that order is preserved"""
+        output = []
+        for x in fieldset:
+            if x not in output:
+                output.append(x)
+
+        remove_fields = []
+
+        for field in form.fields:
+            if str(field) not in output:
+                remove_fields.append(str(field))
+
+        for field in remove_fields:
+            form.fields.pop(field)
+
         if form.is_valid():
             data=form.cleaned_data
             work = Work.objects.get(id=id)
@@ -99,6 +140,27 @@ def edit(request,id):
             return render(request,'addwork.html',{'work':work,'message':'There was an error in you request','tabs':tabs,'form':form,'alerts':alerts})
     else:
         form = Addworkform(instance =work)
+        fieldset = []
+        if drawing_group:
+            fieldset.extend(drawing_fields)
+        if accounts_group:
+            fieldset.extend(accounts_fields)
+
+        """ Remove duplicates, not using sets so that order is preserved"""
+        output = []
+        for x in fieldset:
+            if x not in output:
+                output.append(x)
+
+        remove_fields = []
+
+        for field in form.fields:
+            if str(field) not in output:
+                remove_fields.append(str(field))
+
+        for field in remove_fields:
+            form.fields.pop(field)
+
         return render(request,'addwork.html',{'work':work,'form':form,'tabs':tabs,'alerts':alerts})
 
 @login_required
