@@ -34,6 +34,7 @@ urlpatterns += patterns('work.views',
     url(r'^edit/(?P<id>\d+)/$','edit',name = 'edit'),
     url(r'^view/(?P<id>\d+)/$','showwork',name = 'view'),
     url(r'^drawing/(?P<id>\d+)/$','draw',name = 'drawing'),
+    url(r'^deldrawing/(?P<id>\d+)/$','deldrawing',name = 'deldrawing'),
 
 )+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     

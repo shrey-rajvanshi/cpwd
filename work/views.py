@@ -8,6 +8,7 @@ from django.template import RequestContext
 from home.models import *
 from work.models import *
 from work.forms import *
+from work.xls import *
 
 @login_required
 def search(request):
@@ -42,7 +43,7 @@ def draw(request,id):
 
             # Redirect to the document list after POST
             #return HttpResponseRedirect(reverse('myproject.myapp.views.list'))
-	    return HttpResponseRedirect('')
+            return HttpResponseRedirect('')
     else:
         form = DocumentForm() # A empty, unbound form
 
@@ -52,7 +53,7 @@ def draw(request,id):
     # Render list page with the documents and the form
     return render_to_response(
         'drawings.html',
-        {'documents': documents,'alerts':alerts,'tabs':tabs,'form': form},
+            {'documents': documents,'alerts':alerts,'tabs':tabs,'form': form},
         context_instance=RequestContext(request)
     )
 
@@ -102,9 +103,21 @@ def edit(request,id):
 
 @login_required
 def xls(request):
-    book= open("C:\Users\shrey\Downloads\PycharmProjects\cpwd\media\PE,TS,NIT,Agmt. Details.xls")
-    response = HttpResponse(book,mimetype='application/vnd.ms-excel')
+    mapping = generate_mapping()
+    format_book = open_workbook('media/format.xls')
+    format_sheet = format_book.sheet_by_index(0)
+    book = Workbook()
+    sheet1 = book.add_sheet('Sheet 1')
+    for col_index in range(format_sheet.ncols):
+        sheet1.write(0,col_index,format_sheet.cell(0,col_index).value)
+    for col_name,col_index in mapping.iteritems():
+        row_index = 1
+        for item in Work.objects.values(col_name):
+            sheet1.write(row_index,col_index, item[col_name])
+            row_index+=1
+    response = HttpResponse(mimetype='application/vnd.ms-excel')
     response['Content-Disposition'] = 'attachment; filename=CPWDdetails.xls'
+    book.save(response)
     return response
 
 def status(work):
@@ -119,8 +132,28 @@ def status(work):
     else:
         work.status = 1
 
+
+def wstep(work):
+    if work.date_start:
+        work.wstep = 6
+    elif work.ts_detail:
+        work.wstep = 5
+    elif work.pe_amt:
+        work.wstep = 4
+    elif work.document_set().all().count()>0:
+        work.wstep = 3
+    elif work.pe_det:
+        work.wstep = 2
+    else:
+        work.wstep = 1
+
 def showwork(request,id):
     work = Work.objects.get(id=id)
     alerts = Alert.objects.all()
     drawings = work.document_set.all()
     return render(request,'project_view.html',{'work':work,'alerts':alerts,'drawings':drawings})
+
+def deldrawing(request,id):
+    drawing = Document.objects.get(id=id)
+    drawing.delete()
+    return HttpResponse("Drawing deleted")
