@@ -1,25 +1,22 @@
 {% extends 'base.html' %}
 
 {% block maincontent %}
-<img src = "{{ MEDIA_URL }}images/step{{ work.status }}h.png" style="margin-left: 22%"> </img>
-    <div class = "navigation">
-        <ul class="top-level">
-            {% for tab in tabs %}
-                <li> <a href = "{{ tab.link }}"><img src="{{ MEDIA_URL }}images/{{ tab.name }}.png" height=50px>{{ tab.name }}</a></li>
-            {% endfor %}
-        </ul>
-    </div>
+<img src = "{{ MEDIA_URL }}images/Flow/flow{{ work.status }}h.png" style="margin-left: 22%"> </img>
+
 
 <div class="filler"></div>
-    <div style="width:60%;float: left;">
+<div style="width:60%;float: left;">
+
+<div class="filler"></div>
+<div style="width:60%;float: left;">
     <table border="none" >
 
-    <div id = "Addworkform" >
+        <div id = "Addworkform" >
 
-        <div id = "filler"></div>
-        <form id ="addwork" action="" method="POST" >
-            {% csrf_token %}
-            {% for field in form %}
+            <div id = "filler"></div>
+            <form id ="addwork" action="" method="POST" >
+                {% csrf_token %}
+                {% for field in form %}
                 <tr>
                     <td id="zx"><span >{{ field.label }}</span></td>
                     <td id="zx"><span >{{ field }}</span></td>
@@ -28,13 +25,12 @@
 
                 </tr>
 
-            {% endfor %}
+                {% endfor %}
     </table>
-            <p><input type="submit" value="Submit"></p>
-        </form>
-    </div>
-    <br/><br/>
-    </div>
+    <p><input type="submit" value="Submit"></p>
+    </form>
+</div>
+<br/><br/>
+</div>
 
 {% endblock %}
-

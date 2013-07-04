@@ -1,35 +1,88 @@
 {% extends 'base.html' %}
 
 {% block maincontent %}
+
+<script src="../../css/dropzone.js"></script>
+<link href="../../css/dropzone.css" type="text/css" rel="stylesheet"/>
+<div id = "imgcontainer" style="width:569px;height:47px;margin-left:22%;">
+    <div>
+        <img id = "img1" src ="{{ MEDIA_URL }}images/Flow/flow{{ work.status }}a.png"></div>
+
+    <a href="/edit/{{ work.id }}/">
+        <div id = "cstep" onmouseover="b()" onmouseout="c()" style="width: 142px;height: 47px;position: relative;top: -47px; ">
+
+        </div>
+    </a>
+
+    </img>
+
+</div>
+
+
+
+<script type="text/javascript">
+    document.onload(a());
+    function a(){
+        var m = {{work.status}};
+    var n = parseInt(m) *143;
+    document.getElementById("cstep").style.marginLeft=n +"px";
+    }
+    function b()
+    {
+        var tmp = {{ work.status }}+1;
+    if(tmp>6){
+        tmp=6;
+    }
+    var str = "{{ MEDIA_URL }}images/Flow/flow"+tmp+"h.png";
+    document.getElementById("img1").src= str;
+    }
+    function c()
+    {
+        var tmp = {{ work.status }};
+    var str = "{{ MEDIA_URL }}images/Flow/flow"+tmp+"a.png";
+    document.getElementById("img1").src= str;
+    }
+</script>
+
+</div>
 		<!-- List of uploaded documents -->
-        <div class = "imagepage">
+        <div class = "imagepage" style="margin-left: 22%">
 		{% if documents %}
 			<ul>
-			{% for document in documents %}
-				<li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a>
-                    <img src="{{ document.docfile.url }}" style="max-height:30% ">
-			<p>Drawing Created: {{ document.created}}</p>
-			<p>Drawing Modified: {{ document.modified}}</p>
-			</li>
-                <p>                ---------------------------------------------------------------------------------------------</p>
-			{% endfor %}
+                {% for d in documents %}
+                <img src=" {{ d.docfile.url }}"  id = "drawing{{ d.id }}" onclick="del({{ d.id }})" style=" width:100px; height:100px;"></img>
+                <div>
+                    <p>Drawing Created: {{ d.created}}</p>
+                    <p>Drawing Modified: {{ d.modified}}</p>
+                </div>
+                </li>
+
+                {% endfor %}
 			</ul>
 		{% else %}
 			<p>No documents.</p>
 		{% endif %}
 
 		<!-- Upload form.  -->
-		<form action="" method="post" enctype="multipart/form-data">
+		<form action="" method="post" class = "dropzone dz-clickable" enctype="multipart/form-data">
 			{% csrf_token %}
 			<p>{{ form.non_field_errors }}</p>
-			<p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
 			<p>
 				{{ form.docfile.errors }}
-				{{ form.docfile }}
+				<!--{{ form.docfile }} !-->
 			</p>
-			<p><input type="submit" value="Upload" /></p>
+
 		</form>
 
+         <!-- Dropzone form --!-->
+
+
+
+
         </div>
+<a href="../../view/{{ work.id }}/" style="decoration:none;position:relative;top:200px;">
+    Back to view
+</a>
+
 {% endblock %}
 

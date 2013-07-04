@@ -11,14 +11,30 @@
     <img src ="{{ MEDIA_URL }}images/header.png" width=100%>
     <a style="float: right;" href="{{ MEDIA_URL }}accounts/logout/">Logout</a>
 
+    <div class="navigation">
+
+        <ul class="top-level">
+
+            <li> <a href="/"><img src="/images/Home.png" height="50px">Home</a></li>
+
+            <li> <a href="../../../search/"><img src="/images/Search.png" height="50px">Search</a></li>
+
+            <li> <a href="../../../all/"><img src="/images/All projects.png" height="50px">All projects</a></li>
+
+            <li> <a href="../../../add/"><img src="/images/Add New Work.png" height="50px">Add New Work</a></li>
+
+            <li> <a href="../../../xls/"><img src="/images/Download xls.png" height="50px">Download xls</a></li>
+
+        </ul>
+
+    </div>‮
+
 </div><p style="
     margin-left: 23%;
 ">{{ message }}</p><br/>
 
 {% block maincontent %}
 {% endblock %}
-
-
 
 <div  class = "alerts" >
 
@@ -28,11 +44,13 @@
 
         {% for alert in alerts %}
 
-            {{ alert.name|safe }}<br/><br/><br/>
+        {{ alert.name|safe }}<br/><br/><br/>
         {% endfor %}
 
     </marquee>
 </div>
+
+
 
 </body>
 </html>

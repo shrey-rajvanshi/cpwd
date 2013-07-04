@@ -1,21 +1,19 @@
 {% extends 'base.html' %}
 
 {% block maincontent %}
-<!--<script type="text/javascript">
-    document.onload( {Array = document.getElementsByClassName("agency");
-       for(i=0;i<=Array.length;i++)
-       {
-           document.getElementsByClassName("agency")[i].innerHTML=document.getElementsByClassName("agency").innerHTML+1;
-       }});
-</script> !-->
-<div class="results">
 
-<h3>agency is {{ agency }} and name is {{ name }}<br/></h3>
-    {% for l in list %}
+<div class="results" style="margin-left: 22%;width: 50%;">
 
-        <div class= "work{{ l.status }}">
-            <a href ="../view/{{ l.id }}/"> {{ forloop.counter }}. {{ l.name }}</a> &nbsp;&nbsp;{{ l.status }}
-            &nbsp;&nbsp;&nbsp; <div class =agency style ="float:right;"> {{ l.agency }}</div><br/></div>
-    {% endfor %}
+    <h3>agency is {{ agency }} and name is {{ name }}<br/></h3>
+    <table><tr><th>Name of work</th><th>Project code</th><th>Work in state</th><th>Agency</th>
+    </tr>
+        {% for l in list %}
+
+        <tr class= "work{{ l.status }}">
+            <td><a href ="../view/{{ l.id }}/">{{ l.name }}</a></td>
+            <td>{{ l.project_code }}</td>
+            <td>{{ l.status }}</td><td class=agency style ="float:right;"> {{ l.agency }}</td></tr>
+        {% endfor %}
+    </table>
 </div>
 {% endblock %}

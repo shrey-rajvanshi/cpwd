@@ -5,3 +5,4 @@ from work.models import *
 
 admin.site.register(Work)
 admin.site.register(Document)
+admin.site.register(agency)

@@ -4,9 +4,9 @@
 
 <script src="../../css/jquery.min.js">
 </script>
-<div id = "imgcontainer" style="width:569px;height:47px;">
+<div id = "imgcontainer" style="width:569px;height:47px;margin-left:22%;">
   <div>
-      <img id = "img1" src ="{{ MEDIA_URL }}images/step{{ work.status }}.png" onmouseover="src='{{ MEDIA_URL }}images/step{{ work.status }}h.png'" onmouseout="src='{{ MEDIA_URL }}images/step{{ work.status }}.png'" ></div>
+      <img id = "img1" src ="{{ MEDIA_URL }}images/Flow/flow{{ work.status }}a.png"></div>
 
             <a href="/edit/{{ work.id }}/">
                 <div id = "cstep" onmouseover="b()" onmouseout="c()" style="width: 142px;height: 47px;position: relative;top: -47px; ">
@@ -17,20 +17,32 @@
         </img>
 
   </div>
-<script type="text/javascript">
+<script>
     document.onload(a());
     function a(){
         var m = {{work.status}};
         var n = parseInt(m) *143;
+        if(m==1)
+        {   console.log("value of n 1 found "+m)
+            $("#imgcontainer a").attr("href","../../drawing/{{ work.id }}/")
+
+        }
         document.getElementById("cstep").style.marginLeft=n +"px";
     }
     function b()
         {
-        document.getElementById("img1").src= "{{ MEDIA_URL }}images/step{{ work.status }}h.png";
+	var tmp = {{ work.status }}+1;
+	if(tmp>6){
+		tmp=6;
+		}
+	var str = "{{ MEDIA_URL }}images/Flow/flow"+tmp+"h.png";
+        document.getElementById("img1").src= str;
         }
     function c()
     {
-        document.getElementById("img1").src= "{{ MEDIA_URL }}images/step{{ work.status }}.png";
+        var tmp = {{ work.status }};
+	var str = "{{ MEDIA_URL }}images/Flow/flow"+tmp+"a.png";
+        document.getElementById("img1").src= str;
     }
 </script>
 
@@ -78,7 +90,7 @@
 
 <tr>
 <td id="zx">Status</td>
-<td id="zx">{{ work.status }}</td>
+<td id="zx">{{ stats }}</td>
 </tr>
 <tr>
 <td colspan="2" style = "background:#999; color:#fff; font-size:1.25em; padding-left:10px;">Priliminary Estimate</td>
@@ -174,7 +186,7 @@
 <p style="width:500px;border: 1px solid gray;height:200px;">
 {{ work.remarks }}
 </p>
-</div> <div>
+</div> <div id ="drawings" style="float:right;margin-top: 22%;width:20%">
     <script>
         function del(id){
             var url = "../../deldrawing/"+id+"/";
@@ -186,13 +198,41 @@
                     },
                     "html"
             );
-            $("#drawing"+id).fadeOut(2000);
+            $("#drawing"+id).fadeOut(3000);
+            $("#drawing"+id+"r").fadeOut(3000);
         }
-    </script>
-{% for d in drawings %}
-<img src=" {{ d.docfile.url }}" onclick="del({{d.id}})" id = "drawing{{ d.id }}"style=" width:100px; height:100px;"></img>
+        function d(id)
+        {
+            document.getElementById("drawing"+id).className = "translucent";
+        }
+        function e(id)
+        {
+            document.getElementById("drawing"+id).className="opaque";
+        }
+        function z(id)
+        {
+            document.getElementById("drawing"+id+"r").className="opaque";
+            d(id);
+        }
 
-{% endfor %}
+        function zr(id)
+        {
+            document.getElementById("drawing"+id+"r").className="transparent";
+            e(id);
+        }
+
+
+    </script>
+    {% for d in drawings %}
+    <img src=" {{ d.docfile.url }}"  id = "drawing{{ d.id }}"style=" width:100px;height:100px;" onmouseover="z({{ d.id }})" onmouseout="zr({{ d.id }})"></img>
+    <img class="transparent" src="{{ MEDIA_URL }}images/Recycle_Bin.png" id = "drawing{{ d.id }}r" style="height:20px;width:20px;position:relative;left:-25px;"
+         onclick="del({{d.id}})"
+         onmouseover="z({{ d.id }})"
+         onmouseout="zr({{ d.id }})"/>
+    {% endfor %}
+    <a href=../../drawing/{{ work.id }}/>
+    <img src="{{ MEDIA_URL }}images/Add-icon.png" id = "add_drawing" style="height:50px;width:50px;"/>
+    </a>
 </div>
 
 {% endblock %}

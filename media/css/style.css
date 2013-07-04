@@ -232,21 +232,26 @@ img.centre{
 
 
 .work1{
-    background-color: #e11423;
+    background-color: #ffca7a;
+    padding: 10px;
 }
 
 .work2{
-    background-color: #f0640a;
+    background-color: #ffffb4;
+    padding: 10px;
 }
 .work3{
-    background-color: #052323;
+    background-color: #c8e6f0;
+    padding: 10px;
 }
 .work4{
-    background-color: #78780f;
+    background-color: #cdcdf5;
+    padding: 10px;
 }
 
 .work5{
-    background-color: #148728;
+    padding: 10px;
+    background-color: #a6ecb4;
 
 
 }#zx{
@@ -256,4 +261,31 @@ img.centre{
 
 #id_name{
     width:350px;
+}
+
+.translucent{
+    opacity: 0.5;
+}
+
+.opaque{
+    opacity: 1;
+}
+.transparent{
+    opacity: 0;
+}
+
+#id_name{
+    width:350px;
+}
+
+th, td{
+    border:thin solid black;
+}
+
+table{
+    border:solid black;
+}
+
+#drawing{
+    width:20%;
 }

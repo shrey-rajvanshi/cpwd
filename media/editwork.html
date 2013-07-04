@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block maincontent %}
+<img src = "{{ MEDIA_URL }}images/Flow/flow{{ work.status }}h.png" style="margin-left: 22%"> </img>
+
+
+<div class="filler"></div>
+<div style="width:60%;float: left;">
+    <table border="none" >
+
+        <div id = "Addworkform" >
+
+            <div id = "filler"></div>
+            <form id ="addwork" action="" method="POST" >
+                {% csrf_token %}
+                {% for name, value in work_fields %}
+                {% if name in fields_list %}
+                {% for field in form %}
+                {% if field.name == name %}
+                <tr>
+                    <td id="zx1"><span >{{ field.label }}</span></td>
+                    <td id="zx2"><span >{{ field }}</span></td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+                {% else %}
+                <tr>
+                    <td id="zx3"><span >{{ name }}</span></td>
+                    <td id="zx4"><span >{{ value }}</span></td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+
+                <p><input type="submit" value="Submit"></p>
+            </form>
+        </div>  </table>
+    <br/><br/>
+</div>
+
+{% endblock %}
+

@@ -2,20 +2,31 @@
 
 
 {% block maincontent %}
-    <div class = "navigation">
-	<ul class="top-level">
-     {% for tab in tabs %}
-     <li> <a href = "{{ tab.link }}"><img src="{{ MEDIA_URL }}images/{{ tab.name }}.png" height=50px>{{ tab.name }}</a></li>
-{% endfor %}
+<script type="text/javascript">
+    var a = {{ result }}
+
+</script>
+<div class = "navigation" >
+    <ul class="top-level">
+        {% for tab in tabs %}
+        <li> <a href = "{{ tab.link }}"><img src="{{ MEDIA_URL }}images/{{ tab.name }}.png" height=50px>{{ tab.name }}</a></li>
+        {% endfor %}
     </ul>
-    </div>
-<div class = content>
-  <p> Username : {{ request.user.username }} <br/>
-      First Name: {{ request.user.first_name }} <br/>
-      Last Name: {{ request.user.last_name }} <br/>
-      Email_id: {{ request.user.email }} <br/>
-      Last Login: {{ request.user.last_login }}</p>
+</div>
+<div class = "content" style="" style="float: left;">
+    <p> Username : {{ request.user.username }} <br/>
+        First Name: {{ request.user.first_name }} <br/>
+        Last Name: {{ request.user.last_name }} <br/>
+        Email_id: {{ request.user.email }} <br/>
+        Last Login: {{ request.user.last_login }}</p>
     <a href ="../admin/">Click here to edit your profile</a>
 </div>
+
+<div class = content style="float: left;"><table>
+    {% for label,value in result.items %}
+    <tr><td>{{ label }} </td><td> {{value}}</td></tr>
+    {% endfor %}</table>
+</div>
+
 
 {% endblock %}

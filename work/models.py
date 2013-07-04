@@ -4,9 +4,10 @@ from django.db import models
 status_choices= (
     ('1','REQ. FROM CLIENT RECEIVED - UNSANCTIONED WORK'),
     ('2','PE SENT TO CLIENT - UNSANCTIONED WORK'),
-    ('3','SANCTIONED BUT NOT YET STARTED'),
+    ('3','PE SENT TO CLIENT - UNSANCTIONED WORK'),
+    ('4','SANCTIONED BUT NOT YET STARTED'),
     ('4','SANCTIONED AND WORK IS IN PROGRESS'),
-    ('5','WORK COMPLETED'),
+    ('6','WORK COMPLETED'),
 )
 
 class Work(models.Model):
@@ -43,10 +44,11 @@ class Work(models.Model):
 	progress = models.FloatField(blank=True)
 	remarks= models.TextField(max_length=200,blank=True)
 
-
-
 	def __unicode__(self):
 		return self.name
+
+	def get_fields(self):
+		return [(field.name, field.value_to_string(self)) for field in Work._meta.fields]
 
 class sub_work(models.Model):
 	work= models.ForeignKey(Work,blank=True)

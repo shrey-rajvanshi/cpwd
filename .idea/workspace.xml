@@ -2,10 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39375bf0-7057-4eeb-b897-3ac122e78817" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\Users\shrey\Downloads\PycharmProjects\cpwd\media\images\step1.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\shrey\Downloads\PycharmProjects\cpwd\media\images\step1h.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\shrey\Downloads\PycharmProjects\cpwd\media\images\step2.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\shrey\Downloads\PycharmProjects\cpwd\media\images\step2h.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\shrey\Downloads\PycharmProjects\cpwd\media\images\step3.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\shrey\Downloads\PycharmProjects\cpwd\media\images\step3h.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\shrey\Downloads\PycharmProjects\cpwd\media\images\step4.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\shrey\Downloads\PycharmProjects\cpwd\media\images\step4h.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\shrey\Downloads\PycharmProjects\cpwd\media\images\step5.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\shrey\Downloads\PycharmProjects\cpwd\media\images\step5h.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\shrey\Downloads\PycharmProjects\cpwd\media\images\steph.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home/admin.py" afterPath="$PROJECT_DIR$/home/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home/models.py" afterPath="$PROJECT_DIR$/home/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home/views.py" afterPath="$PROJECT_DIR$/home/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/media/addwork.html" afterPath="$PROJECT_DIR$/media/addwork.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/media/base.html" afterPath="$PROJECT_DIR$/media/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/media/css/style.css" afterPath="$PROJECT_DIR$/media/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/media/drawings.html" afterPath="$PROJECT_DIR$/media/drawings.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/media/home.html" afterPath="$PROJECT_DIR$/media/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/media/project_view.html" afterPath="$PROJECT_DIR$/media/project_view.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/media/results.html" afterPath="$PROJECT_DIR$/media/results.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.py" afterPath="$PROJECT_DIR$/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/admin.py" afterPath="$PROJECT_DIR$/work/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/models.py" afterPath="$PROJECT_DIR$/work/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/views.py" afterPath="$PROJECT_DIR$/work/views.py" />
     </list>
     <ignored path="cpwd.iws" />
@@ -28,10 +49,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="tests.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/work/tests.py">
+      <file leaf-file-name="drawings.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/media/drawings.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="73" column="0" selection-start="2013" selection-end="2013" vertical-scroll-proportion="-40.53846">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addwork.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/media/addwork.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="36" selection-start="216" selection-end="216" vertical-scroll-proportion="-4.576923">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editwork.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/media/editwork.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="36" selection-start="51" selection-end="216" vertical-scroll-proportion="-4.576923">
               <folding />
             </state>
           </provider>
@@ -40,67 +79,29 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/work/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="35" selection-start="2874" selection-end="2874" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="47" column="48" selection-start="2024" selection-end="2024" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#26#83#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="756" selection-end="756" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="project_view.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/media/project_view.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="16" selection-start="673" selection-end="673" vertical-scroll-proportion="-9.153846">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="results.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/media/results.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="107" selection-start="610" selection-end="610" vertical-scroll-proportion="0.55016184">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="40" selection-start="1176" selection-end="1184" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/work/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="15" selection-start="2462" selection-end="2462" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="xls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/work/xls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="32" selection-start="1088" selection-end="1116" vertical-scroll-proportion="0.0">
+            <state line="48" column="0" selection-start="2052" selection-end="2052" vertical-scroll-proportion="0.64498645">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
   </component>
   <component name="Git.Settings">
     <option name="CHECKOUT_INCLUDE_TAGS" value="false" />
@@ -110,17 +111,28 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/urls.py" />
-        <option value="$PROJECT_DIR$/media/project_view.html" />
-        <option value="$PROJECT_DIR$/work/views.py" />
-        <option value="$PROJECT_DIR$/settings.py" />
+        <option value="$PROJECT_DIR$/home/models.py" />
+        <option value="$PROJECT_DIR$/home/admin.py" />
+        <option value="$PROJECT_DIR$/media/base.html" />
+        <option value="$PROJECT_DIR$/home/views.py" />
+        <option value="$PROJECT_DIR$/media/home.html" />
         <option value="$PROJECT_DIR$/media/results.html" />
+        <option value="$PROJECT_DIR$/settings.py" />
+        <option value="$PROJECT_DIR$/media/editwork.html" />
+        <option value="$PROJECT_DIR$/media/addwork.html" />
+        <option value="$PROJECT_DIR$/media/css/dropzone.css.html" />
+        <option value="$PROJECT_DIR$/media/drawings.html" />
+        <option value="$PROJECT_DIR$/work/admin.py" />
+        <option value="$PROJECT_DIR$/work/views.py" />
+        <option value="$PROJECT_DIR$/media/project_view.html" />
+        <option value="$PROJECT_DIR$/media/css/style.css" />
+        <option value="$PROJECT_DIR$/work/models.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="width" value="1372" />
+    <option name="width" value="1378" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -130,7 +142,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="1" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
@@ -149,6 +161,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -177,22 +190,22 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
+              <option name="myItemId" value="work" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="recentsLimit" value="5" />
-    <property name="options.searchVisible" value="true" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="DefaultHtmlFileTemplate" value="Html" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -224,25 +237,6 @@
       <option name="MULTIPROCESS" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <module name="cpwd" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -262,6 +256,50 @@
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
       <option name="launchJavascriptDebuger" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <module name="cpwd" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <module name="cpwd" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="false" name="cpwd" type="Python.DjangoServer" factoryName="Django server">
@@ -319,18 +357,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1372" height="744" extended-state="0" />
+    <frame x="-8" y="0" width="1378" height="744" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3356269" sideWeight="0.67064846" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34018266" sideWeight="0.67235494" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32935154" sideWeight="0.0" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32764506" sideWeight="0.0" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -393,55 +431,114 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/media/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="33" selection-start="724" selection-end="724" vertical-scroll-proportion="0.3090909" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/home/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.6585366" />
+        <state line="22" column="54" selection-start="798" selection-end="798" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/work/tests.py">
+    <entry file="file://$PROJECT_DIR$/media/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="17" column="75" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/urls.py">
+    <entry file="file://$PROJECT_DIR$/work/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="40" selection-start="1176" selection-end="1184" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/work/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="15" selection-start="2462" selection-end="2462" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/work/xls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="32" selection-start="1088" selection-end="1116" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/work/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="35" selection-start="2874" selection-end="2874" vertical-scroll-proportion="0.0">
+        <state line="14" column="23" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="756" selection-end="756" vertical-scroll-proportion="0.0">
+        <state line="101" column="3" selection-start="3696" selection-end="3696" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/media/project_view.html">
+    <entry file="file://$PROJECT_DIR$/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="16" selection-start="673" selection-end="673" vertical-scroll-proportion="-9.153846">
+        <state line="33" column="48" selection-start="1138" selection-end="1138" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/media/results.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="107" selection-start="610" selection-end="610" vertical-scroll-proportion="0.55016184">
+        <state line="18" column="14" selection-start="617" selection-end="617" vertical-scroll-proportion="-11.769231">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/media/editwork.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="36" selection-start="51" selection-end="216" vertical-scroll-proportion="-4.576923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/media/addwork.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="36" selection-start="216" selection-end="216" vertical-scroll-proportion="-4.576923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/media/css/dropzone.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-9.741573">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/media/drawings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="0" selection-start="2013" selection-end="2013" vertical-scroll-proportion="-40.53846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/media/project_view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="237" column="14" selection-start="5768" selection-end="5783" vertical-scroll-proportion="-21.192308">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/media/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="266" column="16" selection-start="3489" selection-end="3489" vertical-scroll-proportion="0.5311653">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="29" selection-start="137" selection-end="137" vertical-scroll-proportion="0.27642277">
+          <folding>
+            <element signature="e#22#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="48" selection-start="2024" selection-end="2024" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#26#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="0" selection-start="2052" selection-end="2052" vertical-scroll-proportion="0.64498645">
           <folding />
         </state>
       </provider>
