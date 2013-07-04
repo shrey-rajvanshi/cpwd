@@ -13,6 +13,7 @@ urlpatterns = patterns('home.views',
     # Examples:
     url(r'^home/$', 'home', name='home'),
     url(r'^$','start',name = 'start'),
+    url(r'^accounts/$','start',name = 'start'),
     url(r'^accounts/logout/$', logout),
     url(r'^accounts/login/$','start'),
     # url(r'^SKBhawan/', include('SKBhawan.foo.urls')),
@@ -22,6 +23,7 @@ urlpatterns = patterns('home.views',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^results/(\d+)/$','searchr',name = 'searchr'),
 )
 
 
@@ -35,6 +37,10 @@ urlpatterns += patterns('work.views',
     url(r'^view/(?P<id>\d+)/$','showwork',name = 'view'),
     url(r'^drawing/(?P<id>\d+)/$','draw',name = 'drawing'),
     url(r'^deldrawing/(?P<id>\d+)/$','deldrawing',name = 'deldrawing'),
+    url(r'^agency/(?P<id>\d+)/$','agency_view',name = 'agency'),
+    url(r'^agency/$','agency_all',name = 'agency_all'),
+    url(r'^progress/(?P<id>\d+)/$','progresshistory',name = 'progresshistory'),
+
 
 )+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     
