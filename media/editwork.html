@@ -19,7 +19,8 @@
                 {% if field.name == name %}
                 <tr>
                     <td id="zx1"><span >{{ field.label }}</span></td>
-                    <td id="zx2"><span >{{ field }}</span></td>
+                    <td id="zx2"><span >{{ field }}{% if field.errors %} {{ field.errors }}{% endif %}</span></td>
+
                 </tr>
                 {% endif %}
                 {% endfor %}

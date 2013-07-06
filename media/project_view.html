@@ -8,30 +8,28 @@
   <div>
       <img id = "img1" src ="{{ MEDIA_URL }}images/Flow/flow{{ work.status }}a.png"></div>
 
-            <a href="/edit/{{ work.id }}/">
+            <a id ="link" href="/edit/{{ work.id }}/">
                 <div id = "cstep" onmouseover="b()" onmouseout="c()" style="width: 142px;height: 47px;position: relative;top: -47px; ">
 
                 </div>
             </a>
 
         </img>
-
   </div>
 <script>
     document.onload(a());
     function a(){
         var m = {{work.status}};
         var n = parseInt(m) *143;
-        if(m==1)
-        {   console.log("value of n 1 found "+m)
-            $("#imgcontainer a").attr("href","../../drawing/{{ work.id }}/")
-
+        if(n==143){
+            console.log('hey.value is '+n);
+            $("#link").attr("href","../../drawing/{{work.id}}/");
         }
         document.getElementById("cstep").style.marginLeft=n +"px";
     }
     function b()
         {
-	var tmp = {{ work.status }}+1;
+	var tmp = {{ work.status }};
 	if(tmp>6){
 		tmp=6;
 		}
@@ -232,7 +230,10 @@
     {% endfor %}
     <a href=../../drawing/{{ work.id }}/>
     <img src="{{ MEDIA_URL }}images/Add-icon.png" id = "add_drawing" style="height:50px;width:50px;"/>
-    </a>
+    </a><a href ="../../progress/{{ work.id }}/"><img src="../../images/button.png"/></a>
+
 </div>
+
+
 
 {% endblock %}

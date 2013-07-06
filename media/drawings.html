@@ -29,7 +29,7 @@
     }
     function b()
     {
-        var tmp = {{ work.status }}+1;
+        var tmp = {{ work.status }};
     if(tmp>6){
         tmp=6;
     }
@@ -43,14 +43,23 @@
     document.getElementById("img1").src= str;
     }
 </script>
+<div style="width:50%;margin-left: 22%;">
+<form action="" method="post" class = "dropzone dz-clickable" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>{{ form.non_field_errors }}</p>
+    <p>
+        {{ form.docfile.errors }}
+        <!--{{ form.docfile }} !-->
+    </p>
 
+</form></div>
 </div>
-		<!-- List of uploaded documents -->
+<!-- List of uploaded documents -->
         <div class = "imagepage" style="margin-left: 22%">
 		{% if documents %}
 			<ul>
                 {% for d in documents %}
-                <img src=" {{ d.docfile.url }}"  id = "drawing{{ d.id }}" onclick="del({{ d.id }})" style=" width:100px; height:100px;"></img>
+                <img src=" {{ d.docfile.url }}"  id = "drawing{{ d.id }}" onclick="del({{ d.id }})" style=" max-width:500px; max-height:500px;"></img>
                 <div>
                     <p>Drawing Created: {{ d.created}}</p>
                     <p>Drawing Modified: {{ d.modified}}</p>
@@ -64,15 +73,7 @@
 		{% endif %}
 
 		<!-- Upload form.  -->
-		<form action="" method="post" class = "dropzone dz-clickable" enctype="multipart/form-data">
-			{% csrf_token %}
-			<p>{{ form.non_field_errors }}</p>
-			<p>
-				{{ form.docfile.errors }}
-				<!--{{ form.docfile }} !-->
-			</p>
 
-		</form>
 
          <!-- Dropzone form --!-->
 

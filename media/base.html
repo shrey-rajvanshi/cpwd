@@ -8,8 +8,10 @@
 </head>
 <body>
 <div class="container" style="    height: 200px;">
-    <img src ="{{ MEDIA_URL }}images/header.png" width=100%>
-    <a style="float: right;" href="{{ MEDIA_URL }}accounts/logout/">Logout</a>
+    <img src ="{{ MEDIA_URL }}images/header.png" width=90%>
+
+    {% if user.is_authenticated %}
+    <a style="float: right;" href="{{ MEDIA_URL }}accounts/logout/">Logout</a>{% endif %}
 
     <div class="navigation">
 
@@ -25,6 +27,11 @@
 
             <li> <a href="../../../xls/"><img src="/images/Download xls.png" height="50px">Download xls</a></li>
 
+            <li> <a href="../../../agency/"><img src="/images/agency.png" height="50px">All agencies</a></li>
+
+            <li> <a href="../../../agency/"><img src="/images/reports.jpg" height="50px">Generate reports</a></li>
+
+
         </ul>
 
     </div>‮
@@ -39,7 +46,7 @@
 <div  class = "alerts" >
 
     <h2><img src="{{ MEDIA_URL }}images/alerts_icon2.png" height=26px;>Alerts</h2>
-    <marquee behavior="scroll" direction="up" scrollamount="2" style="border: 2px solid #ccc; border-radius:10px;color: red;">
+    <marquee behavior="scroll" direction="up" scrollamount="2" style="border: 2px solid #ccc; border-radius:10px;color: red;height: 150px;">
 
 
         {% for alert in alerts %}

@@ -11,8 +11,8 @@ from work.models import *
 from work.forms import *
 from work.xls import *
 
-drawing_fields = ['name', 'project_code', 'requisition', 'pe_det', 'pe_date', 'pe_amt', 'pe_sent_to', 'client', 'aa_es_detail', 'head_acc', 'final_amt', 'auth', 'no_sub', 'ts_detail', 'ts_date', 'ts_amt', 'time_allowd', 'nit', 'nit_date']
-accounts_fields = ['nit_amt', 'agency', 'agency_add', 'agent_no', 'tender_amt', 'date_start', 'stipulated_date', 'actual_date', 'status', 'expense', 'progress']
+drawing_fields = ['name', 'project_code', 'requisition', 'pe_det', 'pe_date', 'pe_amt', 'pe_sent_to', 'client', 'aa_es_detail', 'head_acc', 'final_amt', 'auth', 'no_sub', 'ts_detail', 'ts_date', 'ts_amt', 'time_allowd', 'nit', 'nit_date','progress']
+accounts_fields = ['nit_amt', 'agency', 'agency_add', 'agent_no', 'tender_amt', 'date_start', 'stipulated_date', 'actual_date', 'status', 'expense','progress']
 
 @login_required
 def search(request):
@@ -45,6 +45,7 @@ def draw(request,id):
             newdoc.save()
             status(w)
             w.save()
+
             return HttpResponse('drawing added')
     else:
         form = DocumentForm() # A empty, unbound form
@@ -78,22 +79,18 @@ def add(request):
 @login_required
 def all(request):
     alerts = Alert.objects.all()
-    list = Work.objects.all().order_by('status')
+    list = Work.objects.all().order_by('status').reverse()
     return render(request,"results.html",{'list':list,'alerts':alerts})
 
 def edit_admin(request,id):
     work = Work.objects.get(pk=id)
     alerts = Alert.objects.all()
-
     if request.POST:
         form = Addworkform(request.POST)
         if form.is_valid():
-            data=form.cleaned_data
-            work = Work.objects.get(id=id)
-            work.delete()
-            work=form.save()
-            status(work)
-            work.save()
+            for item in form.cleaned_data:
+                setattr(work,item,form.cleaned_data[item])
+                work.save()
             return render(request,'addwork.html',{'work':work,'message':'work edited successfully','form':form,'alerts':alerts})
         else:
             return render(request,'addwork.html',{'work':work,'message':'There was an error in you request','form':form,'alerts':alerts})
@@ -115,8 +112,6 @@ def edit(request,id):
             drawing_group = True
         if group.name == 'accounts':
             accounts_group = True
-        if group.name == 'EE':
-            edit_admin(request,id)
 
     global drawing_fields
     global accounts_fields
@@ -150,8 +145,15 @@ def edit(request,id):
             data=form.cleaned_data
             work = Work.objects.get(id=id)
             for item in output:
-                setattr(work, item, data[item])
+                if(item is 'auth'or data[item] is 'auth'):
+                    {}
+                else:
+                    setattr(work, item, data[item])
             status(work)
+            if request.POST['progress']!='':
+                p=request.POST['progress']
+                prog = Prog(progressno = p,relatedwork=work)
+                prog.save()
             work.save()
             return render(request,'editwork.html',{'work':work, 'message': 'Work edited successfully!','form':form, 'work_fields':work_fields, 'fields_list':output, 'alerts':alerts})
         else:
@@ -203,7 +205,7 @@ def xls(request):
     return response
 
 def status(work):
-    if work.progress is 100:
+    if work.expense is 100:
         work.status = 6
     elif work.nit:
         work.status = 5
@@ -228,4 +230,23 @@ def deldrawing(request,id):
     drawing.delete()
     return HttpResponse("Drawing deleted")
 
-#def dropdrawing(request):
+def searchquery(query):
+    worklist=Work.objects.filter(query)
+
+
+def agency_all(request):
+    agency_list=agency.objects.all()
+    return render(request,'agency.html',{'agency_list':agency_list})
+
+def agency_view(request,id):
+    alerts=Alert.objects.all()
+    agen=agency.objects.get(id=id)
+    work_list=Work.objects.filter(agency=agen.name)
+    print work_list
+    return render(request,'agency_one.html',{'alerts':alerts,'agency':agen,'work_list':work_list})
+
+def progresshistory(request,id):
+    work=Work.objects.get(id=id)
+    p=work.prog_set.all().order_by('created')
+    alerts=Alert.objects.all()
+    return render(request,'progress.html',{'work':work,'progress':p,'alerts':alerts})

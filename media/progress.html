@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Project history{% endblock %}
+
+{% block maincontent %}
+
+
+        <div class = "progress"><h3>Progress history of {{ work.name }}</h3><br/><br/>
+    {% for p in progress %}
+    {% if forloop.first %}
+        Created on {{ p.created }} with value {{ p.progressno }}<br/>
+    {% endif %}
+
+           Modified again on  {{ p.created }} with value {{ p.progressno }}<br/>
+
+
+
+    {% endfor %}
+        </div>
+{% endblock %}

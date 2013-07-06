@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block maincontent %}
+<div class="results" style="margin-left:22%;width:50%;float:left;">
+
+
+
+    	<table id="table_d">
+	<tr>
+		<td>Name
+		<td>Address1
+		<td>Address2
+	{% for l in agency_list %}
+
+	<tr>
+		<td><a href="{{l.id}}/">{{l.name}}</a>
+		<td>{{l.add_1}}
+		<td>{{l.add_2}}
+	{% endfor %}
+	
+	</table>
+</div>
+{% endblock %}
+

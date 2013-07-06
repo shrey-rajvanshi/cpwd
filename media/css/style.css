@@ -197,6 +197,7 @@ img.centre{
     float:right;
     position:absolute;
     left:80%;
+    top:350px;
 }
 
 	
@@ -219,6 +220,7 @@ img.centre{
 
 .errorlist{
     display: inline-block;
+    color:red;
 }
 
 .searchform{
@@ -288,4 +290,9 @@ table{
 
 #drawing{
     width:20%;
+}
+
+.progress{
+
+    margin-left:22%
 }
